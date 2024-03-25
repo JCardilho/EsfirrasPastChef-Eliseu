@@ -1,5 +1,3 @@
-
-
 <!--https://www.youtube.com/watch?v=rjXXDv23-6Y-->
 
 <!DOCTYPE html>
@@ -7,29 +5,158 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="./styles/output.css" />
-    <title>Pasteis & Esfirra do Chefe Eliseu</title>
+    <title>Pasteis & Esfirra do Chef Eliseu</title>
   </head>
   <body>
     <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
-      <div class="w-full h-full  flex flex-col justify-center items-center">
+      <div class="w-full h-full flex flex-col justify-center items-center">
         <img
           src="./assets/logopastel.jpg"
           alt="logopastel"
-          class="w-60 h-60  rounded-full opacity-90 shandow-lg hover:scale-110 duration-200"
+          class="w-60 h-60 rounded-full opacity-90 shandow-lg hover:scale-110 duration-200"
         />
         <h1 class="text-4xl mt-4 mb-2 font-bold text-white">
           Pasteis & Esfirra do Chefe Eliseu
         </h1>
 
-        <span class=" text-white font-medium ">Rua HiIda  31, Vila Santana - Itapetininga-SP</span>
+        <span class="text-white font-medium"
+          >Rua HiIda 31, Vila Santana - Itapetininga-SP</span
+        >
 
-        <div class=" bg-green-600 px-4  py-1 rounded-lg mt-5" id= "date-span"   >
-            <span>
-                Seg á Dom as 22:00
-            </span>
+        <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
+          <span class="text-white font-medium"> Seg á Dom as 22:00 </span>
         </div>
       </div>
     </header>
+
+    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
+      Conheça Nosso Menu
+    </h2>
+
+    <div id="menu">
+      <main
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+      >
+        <div class="flex gap-2">
+          <img
+            src="./assets/esfi.jpg"
+            alt="esfirra"
+            class="w-28 h=28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Esfirra carne</p>
+            <p class="text-sm">
+              Esfiha de Carne é feita com um recheio tradicional à base de carne
+              moída temperada com especiarias e ervas aromáticas, que conferem
+              um sabor único e irresistível. A massa, fina e levemente crocante,
+              é assada até atingir o ponto perfeito de maciez.
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 10,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Esfirra carne"
+                data-price="10,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"> </i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <img
+            src="./assets/esfirra.jpg"
+            alt="esfirra"
+            class="w-28 h=28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Esfirra Pizza</p>
+            <p class="text-sm">
+              Esfiha de Carne é feita com um recheio tradicional à base de carne
+              moída temperada com especiarias e ervas aromáticas, que conferem
+              um sabor único e irresistível. A massa, fina e levemente crocante,
+              é assada até atingir o ponto perfeito de maciez.
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 10,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Esfirra Pizza"
+                data-price="10,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"> </i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <img
+            src="./assets/esfirraaberta.jpg"
+            alt="esfirraaberta"
+            class="w-28 h=28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Esfirra aberta</p>
+            <p class="text-sm">
+              Esfiha aberta é feita com um recheio tradicional à base de carne
+              moída temperada com especiarias e ervas aromáticas, que conferem
+              um sabor único e irresistível. A massa, fina e levemente crocante,
+              é assada até atingir o ponto perfeito de maciez.
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 10,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Esfirra aberta"
+                data-price="10,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"> </i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <img
+            src="./assets/imgpastel.jpg"
+            alt="pastel"
+            class="w-28 h=28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Pastel Carne</p>
+            <p class="text-sm">
+              Pastel de Carne é feita com um recheio tradicional à base de carne
+              moída temperada com especiarias e ervas aromáticas, que conferem
+              um sabor único e irresistível. A massa, fina e levemente crocante,
+              é assada até atingir o ponto perfeito de maciez.
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 10,00</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="pastel carne"
+                data-price="10,00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"> </i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
