@@ -2,12 +2,14 @@
 module.exports = {
   content: ["./**/*.{html,js}"],
   theme: {
+    fontFamily: {
+      sans: ["Roboto", "sans-serif"],
+    },
     extend: {
-      backgroundImage :{
-        "home": "url('/assets/loja_1.jpg')"
-      }
+      backgroundImage: {
+        "home": "./assets/loja_1.jpg"
+      },
     },
   },
   plugins: [],
-}
-
+};
