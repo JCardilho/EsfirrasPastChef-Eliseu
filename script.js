@@ -12,7 +12,9 @@ const addressWarn = document.getElementById("address-warn");
 let cart = [];
 
 cartBtn.addEventListener("click", function () {
-  cartModal.style.display = "flex";
+  updateCartModal();
+  cartModal.style.display = "flex"
+  
 });
 cartModal.addEventListener("click", function (event) {
   if (event.target === cartModal) {
@@ -35,9 +37,41 @@ menu.addEventListener("click", function (event) {
 });
 
 function addToCart(name, price) {
+  const existingItem = cart.find(item=> item.name === name)
+
+  if(existingItem){
+    existingItem.quantity += 1;
+    return;
+  }
   cart.push({
     name,
     price,
     quantity: 1,
   });
+}
+
+function updateCartModal(){
+  cartItemsContainer.innerHTML = "";
+  let total = 0;
+
+  cart.forEach(item =>{
+    const cartItemElement = document.createElement("div");
+
+    cartItemElement.innerHTML =  `
+    <div>
+      <div>
+        <p>${item.name}</P>
+        <p>${item.quantity}</P>
+        <p>${item.price}</P>
+      </div>
+      <div>
+        <button>
+          Remover
+        </button>
+      </div>
+
+    </div>`
+
+    cartItemsContainer.appendChild(cartItemElement)
+  })
 }
