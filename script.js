@@ -56,22 +56,56 @@ function updateCartModal(){
 
   cart.forEach(item =>{
     const cartItemElement = document.createElement("div");
+    cartItemElement.classList.add("flex","justify-between","mb-4","flex-col")
 
     cartItemElement.innerHTML =  `
-    <div>
+    <div class="flex items-center justify-between" >
       <div>
-        <p>${item.name}</P>
-        <p>${item.quantity}</P>
-        <p>${item.price}</P>
+        <p class="font-medium>${item.name}</P>
+        <p>qtd: ${item.quantity}</P>
+        <p  class='font-medium mt-2">R$  ${item.price.toFixed(2)}</P>
       </div>
-      <div>
-        <button>
-          Remover
-        </button>
-      </div>
+      
+      <button class="remove-from-cart-btn" data-name="${item.name}>
+        Remover
+      </button>
+      
 
     </div>`
-
-    cartItemsContainer.appendChild(cartItemElement)
+  
+  total+= item.price * item.quantity;
+  cartItemsContainer.appendChild(cartItemElement)
   })
+  cartTotal.textContent = total.toLocaleString("pt-Br",{
+    style: "currency",
+    currency: "BRL"
+  });
+  cartCounter.innerHTML = cart.length;
 }
+
+cartItemsContainer.addEventListener("click", function(event){
+  if(event.target.classList.contains("remove-from-cart-btn")){
+    const name = event.target.getAttribute("data-name")
+    removeItemCart(name);
+  }
+})
+
+function removeItemCart(name){
+  const index = cart.findIndex(item => item.name === name);
+
+  if(index !== -1){
+    const item = cart[index];
+
+    if(item.quantity > 1){
+      item.quantity -=1;
+      updateCartModal();
+      return;
+    }
+
+    cart.splice(index,1);
+    updateCartModal():
+  }
+}
+
+addressInput.addEventListener("input", fu)
+
