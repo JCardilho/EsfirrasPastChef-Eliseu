@@ -37,7 +37,7 @@ menu.addEventListener("click", function (event) {
 });
 
 function addToCart(name, price) {
-  const existingItem = cart.find(item=> item.name === name)
+  const existingItem = cart.find(item => item.name === name)
 
   if(existingItem){
     existingItem.quantity += 1;
@@ -61,12 +61,12 @@ function updateCartModal(){
     cartItemElement.innerHTML =  `
     <div class="flex items-center justify-between" >
       <div>
-        <p class="font-medium>${item.name}</P>
+        <p class="font-medium">${item.name}</P>
         <p>qtd: ${item.quantity}</P>
-        <p  class='font-medium mt-2">R$  ${item.price.toFixed(2)}</P>
+        <p  class="font-medium mt-2">R$  ${item.price.toFixed(2)}</P>
       </div>
       
-      <button class="remove-from-cart-btn" data-name="${item.name}>
+      <button class="remove-from-cart-btn" data-name= "${item.name}">
         Remover
       </button>
       
@@ -76,7 +76,7 @@ function updateCartModal(){
   total+= item.price * item.quantity;
   cartItemsContainer.appendChild(cartItemElement)
   })
-  cartTotal.textContent = total.toLocaleString("pt-Br",{
+  cartTotal.textContent = total.toLocaleString("pt-BR",{
     style: "currency",
     currency: "BRL"
   });
@@ -111,13 +111,13 @@ addressInput.addEventListener("input", function(event){
   let inputValue = event.target.value;
   if(inputValue !== ""){
     addressInput.classList.remove("border-red-500")
-    addressWarn.classList.remove("hidden")
+    addressWarn.classList.add("hidden")
   }
 })
 
 checkoutBtn.addEventListener("click", function(){
   const isOpen = checkRestaurantOpen();
-  if(isOpen){
+  if(!isOpen){
     
     Toastify({
       text: "Ops Fechado",
@@ -146,10 +146,11 @@ checkoutBtn.addEventListener("click", function(){
           `$(item.name)Quantidade:  (${item.quantity}) Preço: R$ ${item.price} |`
   )
   }).join("")
+  
   const message = encodeURIComponent(cartItems);
-  const phone = "15997992178"
+  const phone = "997992178"
 
-  window.open('https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}',"blank")
+  window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`,"_blank")
 
   cart =[];
   updateCartModal();
@@ -164,7 +165,7 @@ function checkRestaurantOpen(){
 }
 
 
-const spanItem = document.getElementById("data-span")
+const spanItem = document.getElementById("date-span")
 const isOpen = checkRestaurantOpen();
 
 if(isOpen){
