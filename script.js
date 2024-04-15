@@ -8,8 +8,13 @@ const closeModalBtn = document.getElementById("close-modal-btn");
 const cartCounter = document.getElementById("cart-count");
 const addressInput = document.getElementById("address");
 const addressWarn = document.getElementById("address-warn");
+const phoneWhatsapp = document.getElementById("phone-whatsapp");
+
 
 let cart = [];
+phoneWhatsapp.addEventListener("click",function(){
+  window.open("https://wa.me/15997992178?text=Olá%20gostaria%20de%20fazer%20um%20pedido%20.","_blank")
+});
 
 cartBtn.addEventListener("click", function () {
   updateCartModal();
@@ -27,7 +32,7 @@ closeModalBtn.addEventListener("click", function () {
 menu.addEventListener("click", function (event) {
   
   let parentButton = event.target.closest(".add-to-cart-btn")
-
+  
   if (parentButton) {
     const name = parentButton.getAttribute("data-name")
     const price = parseFloat(parentButton.getAttribute("data-price"))
@@ -53,6 +58,7 @@ function addToCart(name, price) {
 function updateCartModal(){
   cartItemsContainer.innerHTML = "";
   let total = 0;
+  addressInput.value = ""; 
 
   cart.forEach(item =>{
     const cartItemElement = document.createElement("div");
@@ -143,12 +149,12 @@ checkoutBtn.addEventListener("click", function(){
 
   cartItems = cart.map((item) => {
     return(
-          `$(item.name)Quantidade:  (${item.quantity}) Preço: R$ ${item.price} |`
+          `(${item.name})  Quantidade:  (${item.quantity}) Preço: R$ ${item.price}  |  `
   )
   }).join("")
   
   const message = encodeURIComponent(cartItems);
-  const phone = "997992178"
+  const phone = "15997992178"
 
   window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`,"_blank")
 
@@ -160,7 +166,7 @@ checkoutBtn.addEventListener("click", function(){
 function checkRestaurantOpen(){
   const data = new Date();
   const hora = data.getHours();
-  return hora >= 18 && hora < 22;
+  return hora >= 8 && hora < 22;
 
 }
 
