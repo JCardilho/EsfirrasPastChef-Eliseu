@@ -11,6 +11,7 @@ const addressWarn = document.getElementById("address-warn");
 const phoneWhatsapp = document.getElementById("phone-whatsapp");
 
 
+
 let cart = [];
 phoneWhatsapp.addEventListener("click",function(){
   window.open("https://wa.me/15997992178?text=Olá%20gostaria%20de%20fazer%20um%20pedido%20.","_blank")
@@ -36,7 +37,7 @@ menu.addEventListener("click", function (event) {
   if (parentButton) {
     const name = parentButton.getAttribute("data-name")
     const price = parseFloat(parentButton.getAttribute("data-price"))
-   
+    
     addToCart(name, price)
   }
 });
@@ -53,6 +54,7 @@ function addToCart(name, price) {
     price,
     quantity: 1,
   });
+  cartCounter.innerHTML = cart.length;
 }
 
 function updateCartModal(){
@@ -149,14 +151,15 @@ checkoutBtn.addEventListener("click", function(){
 
   cartItems = cart.map((item) => {
     return(
-          `(${item.name})  Quantidade:  (${item.quantity}) Preço: R$ ${item.price}  |  `
+          `(  ${item.name}   Quantidade:  ${item.quantity}  Preço: R$ ${item.price} ) |     `
   )
   }).join("")
   
   const message = encodeURIComponent(cartItems);
   const phone = "15997011512";
+  const total = cartTotal.textContent;
 
-  window.open(`https://wa.me/${phone}?text=${message}%20Endereço: %20${addressInput.value}`,"_blank")
+  window.open(`https://wa.me/${phone}?text=${message}%20Total:%20${total}%20Endereço: %20${addressInput.value}`,"_blank")
 
   cart =[];
   updateCartModal();
