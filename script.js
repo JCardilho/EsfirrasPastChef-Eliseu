@@ -9,6 +9,8 @@ const cartCounter = document.getElementById("cart-count");
 const addressInput = document.getElementById("address");
 const addressWarn = document.getElementById("address-warn");
 const phoneWhatsapp = document.getElementById("phone-whatsapp");
+const dateValue = document.getElementById("date");
+const timeValue = document.getElementById("time");
 
 
 
@@ -61,6 +63,8 @@ function updateCartModal(){
   cartItemsContainer.innerHTML = "";
   let total = 0;
   addressInput.value = ""; 
+  dateValue.value = "";
+  timeValue.value = "";
 
   cart.forEach(item =>{
     const cartItemElement = document.createElement("div");
@@ -158,8 +162,10 @@ checkoutBtn.addEventListener("click", function(){
   const message = encodeURIComponent(cartItems);
   const phone = "15997011512";
   const total = cartTotal.textContent;
+  const data = dateValue.value;
+  const horas = timeValue.value;
 
-  window.open(`https://wa.me/${phone}?text=${message}%20Total:%20${total}%20Endereço: %20${addressInput.value}`,"_blank")
+  window.open(`https://wa.me/${phone}?text=${message}%20Total:%20${total}%20Endereço: %20${addressInput.value}%20Data da entrega : %20${data}%20Horas : %20${horas}`,"_blank")
 
   cart =[];
   updateCartModal();
