@@ -16,7 +16,7 @@ const timeValue = document.getElementById("time");
 
 let cart = [];
 phoneWhatsapp.addEventListener("click",function(){
-  window.open("https://wa.me/15997992178?text=Olá%20gostaria%20de%20fazer%20um%20pedido%20.","_blank")
+  window.open("https://wa.me/15997011512?text=Olá%20gostaria%20de%20fazer%20um%20pedido%20.","_blank")
 });
 
 cartBtn.addEventListener("click", function () {

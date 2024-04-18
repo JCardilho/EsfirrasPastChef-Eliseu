@@ -1453,6 +1453,10 @@ video {
   justify-items: stretch;
 }
 
+.gap-10 {
+  gap: 2.5rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1463,14 +1467,6 @@ video {
 
 .gap-7 {
   gap: 1.75rem;
-}
-
-.gap-8 {
-  gap: 2rem;
-}
-
-.gap-10 {
-  gap: 2.5rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
